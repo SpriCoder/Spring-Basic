@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springbasic?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root #改为自己数据库的密码
+    bySearch:
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      timeBestweenEvictionRunsMillis: 3600000 #每个小时确认连接是否可用
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.njuzhy.demo.data
